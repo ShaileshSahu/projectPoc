@@ -3,7 +3,7 @@ const app = express();
 const Paydoo = require('./paydoo');
 const Fractal = require('./fractal');
 const path = require('path');
-
+const Fraud = require('./fraudSeon');
 // This is project which basically POC of the paydoo and their implementation in to the system !!
 
 app.use(express.urlencoded());
@@ -44,6 +44,19 @@ app.get('/transactionDetail', async (req, res) => {
 app.get('/paymentAttempt', async (req,res) => {
 
    return res.redirect("https://test.ppipe.net/connectors/demo/giropayfiducia/simulator/giropayfiducia.ftl?jsessionid=014468885B0169B187024FE1C7193A3B.uat01-vm-con01&redirectData=merchantId%3D8995001%26merchantTxId%3D8ac7a4a1705c6d2b01705c85d0761c37%26txId%3D0000847439%26operatorSignature%3DsimulatorSignature%26operatorId%3D002");
+});
+
+app.get('/fraudPrevention', async (req,res) => {
+    const { email, phone, ip } = req.query;
+    let emailDetail = null,  phoneDetail = null, ipDetail = null;
+    if (email) 
+        emailDetail = JSON.parse(await Fraud.fraud.getEmailDetail(email));
+    if (phone)
+        phoneDetail = JSON.parse(await Fraud.fraud.getPhoneDetail(phone));
+    if (ip)
+        ipDetail = JSON.parse(await Fraud.fraud.getIpDetail(ip));
+
+    return res.send({emailDetail, phoneDetail, ipDetail}); 
 });
 
 

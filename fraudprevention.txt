@@ -5,7 +5,42 @@ There are three module - Email, phone and IP.
 
 --> Fraud prevention tool : 
 
-curl https://api.seon.io/SeonRestService/email-api/v2.0/[email_address] \
-  -H 'X-API-KEY: [license_key]' \
+curl https://api.seon.io/SeonRestService/email-api/v2.0/sahushailesh9@gmail.com \
+  -H 'X-API-KEY:3e23c13d-05d7-42ec-bda7-d4f265e06841' \
   -H 'Cache-Control: no-cache'
   
+
+----------------------------- REQUIRED DOCUMENTS -----------------------------------
+
+  https://admin.seon.io/
+  poras.sharma@appinventiv.com
+  poras@123
+
+  There were a few action points that I have outlined below:
+
+1.   Documents - Please find some information on the core service we offer.
+
+o   Industry focused deck: https://docsend.com/view/3pckyfi
+
+o   Product features deck: https://docsend.com/view/znpdwrd
+
+o   Device Fingerprinting deck: https://docsend.com/view/vse756g
+
+o   Admin Panel user guide: https://docsend.com/view/aa47zn2
+
+o   Integration timeline document: https://seon.io/static/pdf/seon-integration-flow.pdf
+
+o   API Documentation: https://developers.seon.io/
+
+§License key to access: 3e23c13d-05d7-42ec-bda7-d4f265e06841
+
+2.   Quotation - You may find our basic pricing on our website at https://seon.io/pricing, for a custom quote please share some monthly figures with me. 
+
+3.   Case Studies - Here you can find one of our case studies that demonstrate the power of our service: https://seon.io/resources/case-study/tickething-ticket-fraud-challenges/
+
+4.   Historical data analysis  - If you would like to test our system capability before integrating the APIs, you can send us historical data in a CSV file for analysis - let me know if this is interesting for you and we can provide more information.
+
+5.   Follow-up meeting - I recommend to schedule a follow up meeting, where we could introduce the platform in-depth to the fraud analyst team at Xcoins and/or the IT department, answer all questions and define next steps. When would it be suitable for you?
+
+=====================================================================================================================================
+
