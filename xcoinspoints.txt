@@ -1,0 +1,59 @@
+
+1) Customer Id : - AccountID willbe concat with Domaincode, lastname, (date, time what is the data & time denote here ?)
+2) When we block the customer do we have to move the customer from the main customer table to block table ?
+3) Customer Card :- can we save the detail of the customer card ? (PCI compliance issue would be raised) ?
+4) Customer Category Relationship length and purchase no  ?
+5) Address not match with IP Address than raise flag why (for eg : phone number could be differnt this documented address could be different)??
+6) Valid Wallet Address : - Is it Bitcoin address ?? or other wallet address ?? or we need third party to validate that address is valid.
+7) As we are created different table for eg: for cards (card order detail table) and sepa (sepa order detail) and so many table will be created if no of method increased (like UPI payments and different have diffrent wallet mechanism).
+8) How do we approach the selling the bitcoing and do we saved the account no. and than transfer or other method ??
+9) Can we flag code for the flag detail to make it more usable.
+10) Transaction summary db need to be modularize
+11) Wallet creation of key from the frontend and then it goes sign with server key after that master key encrypt and than it will effect and their conflict b/w magnum and xcoin wallet !!
+
+
+
+
+
+
+
+
+
+
+Understanding points in Xcoins :
+
+Level 1: Email & password (upto 100 USD)
+
+Level 2: Surname, family, name, DOB, Phone (Phone verified) (upto 500 USD)
+
+Level 3(KYC): (Identiy documents and selfie) (upto 5000 USD)
+
+Level 3(AML): (Source of wealth and  source of funds) (unlimited)
+
+1) Done : Registration process ??
+
+
+2) Buy Bitcoin module !!
+
+a) Payment matrix would be dyanamic as depend on the country and their domain.
+
+3) Coin delievery 
+
+4) Selling Module ()
+
+
+5) --- Wallet Service ---
+
+    a) Wallet Registry : 
+        -
+
+    b) Wallet Service - Magnum and block chain
+
+
+
+------------------------------------------- Discussion ----------------------------------
+
+
+DB Schema : 
+ 
+ Upload ( KYC and other documents) : 

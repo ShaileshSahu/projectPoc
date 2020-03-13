@@ -1,0 +1,87 @@
+
+In Fractal there are three plans (light, basic and plus)
+We will manage the webhooks and callback from the fractal dashboard through which we get the information about the user and their verification status.
+but I found until we complete all the steps we don't get the callback through which 
+
+
+Fractal (KYC and AML)-->
+
+1) Basic :- Verifiction through OCR, PEP/Sanction list, Age of Majority.
+
+2) Ligh: Identity (Selfie)
+
+3) Plus: Indentity (selfie/video), Residency, PEP/Sanction list, Age of Majority , High-risk Countries.
+
+
+
+
+DOMAIN  STAGING    PRODUCTION
+
+FRONTEND_DOMAIN  next.fractal.id           fractal.id
+AUTH_DOMAIN      auth.next.fractal.id      auth.fractal.id
+RESOURCE_DOMAIN  resource.next.fractal.id  resource.fractal.id
+VERIFIER_DOMAIN  verifier.next.fractal.id  verifier.fractal.id
+
+
+Authorization code :
+
+https://FRONTEND_DOMAIN/authorize
+  ?client_id={your-app-id}
+  &redirect_uri={your-redirect-uri}
+  &response_type=code
+  &scope={desired-scope}
+  &state={state-param}
+
+https://next.fractal.id/authorize?client_id=myD91LSXqEAJEpHrmIhyJYYt30pYJkQNghkdz8tTwm4&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Ffractal-callback&response_type=code&scope=uid%3Aread%20email%3Aread%20person.full_name%3Aread%20verification.v1%3Aread
+
+
+Refresh AccessToken :
+
+https://AUTH_DOMAIN
+/oauth/token
+
+client_id:
+client_secret: 
+refresh_token:
+grant_type: refresh_token
+
+
+
+-- User information retrieval --
+
+API_NAME: https://RESOURCE_DOMAIN/users/me
+METHOD: GET
+Authorization: Bearer access_token
+
+
+-- WEBHOOK  Verification code-- 
+NOTE: We send verification_approved notifications for each KYC level and add-on that you have requested initially and they can come in any order. Given client requested light KYC level with selfie and wallet add-ons, for example, we will send 3 notifications with the same value provided in level field. Available values are described in KYC levels section.
+
+-- APPLICATION STATUS --
+
+Client credentials grant flow --
+API: https://AUTH_DOMAIN
+/oauth/token
+Type: POST
+client_id : Required
+client_secret: Required
+scope: 'client.stats:read'
+grant_type: client_credentials
+
+
+Total Verifications:
+API: https://VERIFIER_DOMAIN
+/api/stats/total-verifications
+METHOD: GET
+Authorization: Bearer {access_token}
+
+Verifiction by userId:
+https://VERIFIER_DOMAIN
+/api/stats/user-verifications
+Type: GET
+Authorization: {access_token}
+
+/fractal-callback?code=wSgwjd0zcnsUzVwHApQOLgqw2inp1gPAWNCezwqgm5M
+
+
+{"access_token":"O6U9mizTMYWKWET4lDKJ3X7zvDWV70aNKkG2-Vc-Jl4","token_type":"Bearer","expires_in":7200,"refresh_token":"Jhb2T9P20y49LBg7jhHjafUvCleVqDmu0pfSXBCtoCM","scope":"uid:read email:read person.full_name:read verification.v1:read","created_at":1582192742}

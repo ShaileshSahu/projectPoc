@@ -1,0 +1,12 @@
+clientPassword: 9d1d521eb2714a8fadfcf31272dd5467
+clientId: com.xcoins.staging
+
+https://identity.authenteq.com/authorize?
+response_type=code&
+amp=&
+client_id=com.xcoins.staging&amp=&redirect_uri=https%3A%2F%2Fxcoins.io%2F&amp=&scope=kyc&amp=&state=abc123ppfm&utm_medium=email&utm_source=sharpspring&sslid=MzcwNzezMLY0MDO1AAA&sseid=MzIwMDY1sTS0MAMA&jobid=4d1de5e5-808d-4e75-b9d6-0027e413343e
+
+
+https://identity.authenteq.com/authorize?response_type=code&redirect_uri=https://xcoins.io&client_id=com.xcoins.staging&state=randomrandom
+
+https://identity.authenteq.com/authorize?response_type=code&client_id=com.xcoins.staging&redirect_uri=localhost:5000/callbackAuthenteq&scope=kyc&state=abc123ppfm&back_url=https://localdev.xcoins.com/signup/verifyid

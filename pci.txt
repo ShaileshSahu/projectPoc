@@ -1,0 +1,55 @@
+What is PCI ?
+:- The Payment Card Industry Data Security Standard (PCI DSS) is a set of security standards designed to ensure that ALL companies that accept, process, store or transmit credit card information maintain a secure environment.
+
+The Payment Card Industry Security Standards Council (PCI SSC) was launched on September 7, 2006 to manage the ongoing evolution of the Payment Card Industry (PCI) security standards with a focus on improving payment account security throughout the transaction process. The PCI DSS is administered and managed by the PCI SSC (www.pcisecuritystandards.org), an independent body that was created by the major payment card brands (Visa, MasterCard, American Express, Discover and JCB.). It is important to note that the payment brands and acquirers are responsible for enforcing compliance, not the PCI council.
+
+To whom does the PCI DSS apply?
+:- The PCI DSS applies to ANY organization, regardless of size or number of transactions, that accepts, transmits or stores any cardholder data.
+
+What are the PCI compliance ‘levels’ and how are they determined?
+:- All merchants will fall into one of the four merchant levels based on Visa transaction volume over a 12-month period. Transaction volume is based on the aggregate number of Visa transactions (inclusive of credit, debit and prepaid) from a merchant Doing Business As (‘DBA’). In cases where a merchant corporation has more than one DBA, Visa acquirers must consider the aggregate volume of transactions stored, processed or transmitted by the corporate entity to determine the validation level. If data is not aggregated, such that the corporate entity does not store, process or transmit cardholder data on behalf of multiple DBAs, acquirers will continue to consider the DBA’s individual transaction volume to determine the validation level
+
+Level 1:  Over 6 million
+Level 2:  1M to 6M
+Level 3:  20k to 1M
+Level 4:  <20K
+
+
+
+
+PCI Level of compliances and their coding structure: 
+
+Control (Requirement)
+
+a) Build and Maintain a Secure Network and System
+	1. Install and maintain a firewall configuration to protect cardholder data
+    2. Do not use vendor-supplied defaults for system passwords and other security parameters
+
+b) Protect Cardholder Data
+    3. Protect stored cardholder data
+    4. Encrypt transmission of cardholder data across open, public networks
+
+c) Maintain a Vulnerability Management Program
+  5. Protect all systems against malware and regularly update anti-virus software or programs
+  6. Develop and maintain secure systems and applications
+
+d) Implement Strong Access Control Measures
+  7. Restrict access to cardholder data by business need to know
+  8. Identify and authenticate access to system components
+  9. Restrict physical access to cardholder data
+
+
+e) Regularly Monitor and Test Networks
+  10. Track and monitor all access to network resources and cardholder data
+  11. Regularly test security systems and processes
+
+f) Maintain an Information Security Policy
+  12. Maintain a policy that addresses information security for all personnel
+
+  Findings:
+  
+  i) SQL Server provided default password shouldn't be used 
+  ii) It is recommended to use Transparent Data Encryption (TDE) or full disk encryption to protect the data in your database. The keys must be changed at least once a year and it is recommended to use Extensible Key Management with an external cryptographic provider such as Hardware Security Module (HSM). You should also check that the database does not store the full PAN (card number) clearly visible anywhere. If retrieval of the full PAN is required then there should be an external program or a stored procedure to decrypt the PAN, but access to that tool should be limited.
+  iii) You should configure Secure Sockets Layer (SSL) encryption which requires a certificate.
+  iv) The database should be an internal network zone which is accessible from only trusted networks. In requirement 3 I mentioned that any tool displaying the full card number should be placed under strong access control. The basic principle is that access should be denied for everyone and only those restricted users should be allowed to have access. Even so, the access should be limited to a minimum amount of data. You should define user groups for each business role and implement role-based access control. It is also possible to use module signing using the ADD SIGNATURE statement.
+  v) The best way is the use Windows authentication to enforce strong passwords, password change, etc. If the application has its own user names and passwords then the passwords should never be stored in clear text, they must be hashed or encrypted. The login changes should be audited.

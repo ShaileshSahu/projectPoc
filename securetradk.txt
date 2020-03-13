@@ -1,0 +1,86 @@
+---- Secure Treding Application -----
+
+########################################
+############ Secure      ###############
+
+JWT TOKEN CREATION SECRET !!
+Username: ws-jwt@cftech.com
+Password: 7-2925b1c18f95fb2d7fc1f71ae5c10ec4a1575b739bd4f2c38f66b747ba6a2abe
+
+---- TESTING ----
+
+BANK CREDENTIAL : https://docs.securetrading.com/document/testing/
+-------------------------------
+Authentication:- 
+
+Basically used to debit the amount from the customer (EUROPEAN COUNTRY __ URL DOMAIN BEING USED).
+
+POST : https://docs.securetrading.com/document/webservices-api/authorisations/ -- Authroization 
+
+curl --user ws@xcoins.com:9W>!!wr! https://webservices.securetrading.net/json/ -H "Content-type: application/json" -H "Accept: application/json" -X POST -d '{
+    "alias":"ws@xcoins.com",
+    "version": "1.00",
+    "request": [{
+      "currencyiso3a": "GBP",
+      "requesttypedescriptions": ["AUTH"],
+      "sitereference": "test_cftechnologiestwo76408",
+      "baseamount": "1050",
+      "orderreference": "My_Order_123",
+      "accounttypedescription": "ECOM",
+      "pan": "4111111111111111",
+      "expirydate": "12/2020",
+      "securitycode": "123"
+    }]}'
+------------------------------
+
+
+
+
+
+{
+  "payload": {
+    "accounttypedescription": "ECOM",
+    "baseamount": "1050",
+    "currencyiso3a": "GBP",
+    "sitereference": "test_cftechnologiestwo76408"
+  },
+  "iat": 1583132339,
+  "iss": "ws-jwt@cftech.com"
+}
+
+
+
+// SECURE TRANSACTION CODE ||
+
+errorCode: 
+ 0 : Sucessfull TRANSACTION
+ 60022 : Attempt failed by customer
+ 70000 : Issued bank error 
+
+ transaction refrence : 
+ Value would be unique and need to store that value for further queries in future perspective!!
+
+ settle status :
+  
+  0 : pending automatic settlement
+  1 : pending manual settlement
+  100 : settlement in progress
+  2 : Payment authorized and suspended
+  3 : payment cancelled
+
+
+ Enrolled :
+  Y : customer card is Enrolled
+  N : customer card is not enrolled
+  U : Unable to deteermin card is enrolled
+  B : merchant done 
+
+ Status :
+  Y : customer authenticated 
+  A : authenticated attempt but not completed
+  U : authentication couldn't performed 
+  C : Challenge required for Authentication
+
+
+  ----- SEPA  -----
+  Supported country : AT, BE, CY, DE, EE, ES, FI, FR, GR, IE, IT, LT, LU, LV, MC, MT, NL, PT, SI, SK

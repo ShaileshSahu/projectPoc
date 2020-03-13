@@ -1,0 +1,17 @@
+1) Pricing - We price each application individually depending on the industry, processing volume, average ticket size, split by card type, markets you are targeting. To give you at least estimated pricing can you please send link to your website and provide us with mentioned information.
+
+2) Refund method - We make refunds through refund transaction, we don't have any other methods. You will have access to back office and will be able to click on the transaction you would like to refund and make refund.
+
+3) Settlement cycle - We have daily and weekly settlements. We do not charge any additional commission for making payment to your account, but there could be some fee from correspondent Banks.
+
+4) Payments split - Can you please advise, what exactly do you mean. We integrate our payment solution to merchant's website. If there is any third party between you and your customer, the payments will still go to the final recipient.
+
+5) We are card acquirer, we don't support wire transfer or any payments that are not related to the card schemes. We make payment once it is time to transfer processed volume to the merchant. We also offer payouts for business industries, where merchants needs to pay accumulated funds to their customers. We have direct OCTs.
+
+
+6) other wallet payment's 
+
+
+paydoo 
+securetrading
+paysafe

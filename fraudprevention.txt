@@ -1,0 +1,11 @@
+SEON - FRAUD PREVENTION TOOL 
+
+There are three module - Email, phone and IP.
+
+
+--> Fraud prevention tool : 
+
+curl https://api.seon.io/SeonRestService/email-api/v2.0/[email_address] \
+  -H 'X-API-KEY: [license_key]' \
+  -H 'Cache-Control: no-cache'
+  

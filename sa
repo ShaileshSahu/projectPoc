@@ -1,0 +1,46 @@
+curl https://test.oppwa.com/v1/payments \
+ -d "entityId=8a8294185e5c61f5015e61d25f250dca" \
+ -d "amount=92.12" \
+ -d "currency=EUR" \
+ -d "paymentBrand=GIROPAY" \
+ -d "paymentType=DB" \
+ -d "bankAccount.bic=TESTDETT421" \
+ -d "bankAccount.iban=DE14940593100000012346" \
+ -d "bankAccount.country=DE" \
+ -d "shopperResultUrl=http://localhost:5000/info" \
+ -H "Authorization: Bearer OGE4Mjk0MTg1ZTVjNjFmNTAxNWU2MWQyNWY3ZDBkY2V8ZGZxbnRYTkgzOQ=="
+
+
+
+
+ curl -G https://test.oppwa.com/v1/checkouts/8ac7a4a0705c69f901705cf1abb93ad0 \
+ -d "entityId=8a8294185e5c61f5015e61d25f250dca" \
+ -H "Authorization: Bearer OGE4Mjk0MTg1ZTVjNjFmNTAxNWU2MWQyNWY3ZDBkY2V8ZGZxbnRYTkgzOQ=="
+
+
+
+ curl -G https://test.oppwa.com/v1/payments/8ac7a4a0705c69f901705cf1abb93ad0 \
+ -d "entityId=8a8294185e5c61f5015e61d25f250dca" \
+ -H "Authorization: Bearer OGE4Mjk0MTg1ZTVjNjFmNTAxNWU2MWQyNWY3ZDBkY2V8ZGZxbnRYTkgzOQ=="
+
+
+
+
+ 
+
+
+curl --user ws@xcoins.com:9W>!!wr! https://payments.securetrading.us/json/ -H "Content-type: application/json" -H "Accept: application/json" -X POST -d '{
+"alias":"webservices@example.com",
+"version": "1.00",
+"request": [{
+"currencyiso3a": "GBP",
+"requesttypedescriptions": ["AUTH"],
+"sitereference": "test_site12345",
+"baseamount": "1050",
+"orderreference": "My_Order_123",
+"accounttypedescription": "ECOM",
+"pan": "4111111111111111",
+"expirydate": "12/2022",
+"securitycode": "123"
+}]
+}'

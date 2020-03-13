@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+  <div id="st-notification-frame"></div>
+  <form id="st-form" action="http://localhost:5000/securePaymentCheck" method="POST">
+    <div id="st-card-number" class="st-card-number"></div>
+    <div id="st-expiration-date" class="st-expiration-date"></div>
+    <div id="st-security-code" class="st-security-code"></div>
+    <button type="submit" id="st-form__submit" class="st-form__submit">
+      Pay securely
+    </button>
+  </form>
+ <script src="https://webservices.securetrading.net/js/v2/st.js"></script>
+ <script> 
+  (function() {
+   var st = SecureTrading({  
+    jwt: 'eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjp7ImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiYmFzZWFtb3VudCI6IjEwNTAiLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfY2Z0ZWNobm9sb2dpZXN0d283NjQwOCJ9LCJpYXQiOjE1ODMxMzIzMzksImlzcyI6IndzLWp3dEBjZnRlY2guY29tIn0.yjbnBbiDt_XxcohNjONHXYTiGdE0Rvs3IqkRxmiO4WU',
+   });  
+   st.Components(); 
+  })(); 
+ </script>
+</body>
+</html>
+
